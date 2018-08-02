@@ -17,6 +17,7 @@
     "ts-jest": "^23.0.1",
     "ts-node": "^7.0.0",
     "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.9.2",
     "typescript": "^3.0.1"
   },
   "dependencies": {
@@ -27,7 +28,13 @@
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
     "testRegex": ".test.ts$",
     "testURL": "http://localhost/"
   }
