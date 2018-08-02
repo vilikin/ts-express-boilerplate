@@ -1,4 +1,5 @@
 import * as express from 'express';
+import config from './config';
 
 const app = express();
 
@@ -8,6 +9,6 @@ app.get('/test', (req, res) => {
   });
 });
 
-app.listen(8080, () => {
-  console.log('Im listening');
+app.listen(config.PORT, () => {
+  console.log(`Im listening to ${config.PORT}`);
 });
