@@ -5,13 +5,16 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Vili Kinnunen",
   "license": "MIT",
   "devDependencies": {
     "@types/dotenv": "^4.0.3",
     "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.1",
+    "jest": "^23.4.2",
+    "ts-jest": "^23.0.1",
     "ts-node": "^7.0.0",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1"
@@ -19,5 +22,13 @@
   "dependencies": {
     "dotenv": "^6.0.0",
     "express": "^4.16.3"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+    "testRegex": ".test.ts$",
+    "testURL": "http://localhost/"
   }
 }
