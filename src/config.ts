@@ -3,7 +3,7 @@ import * as path from 'path';
 
 dotenv.config();
 
-const BASE_PATH = path.join(__dirname, 'db');
+const BASE_PATH = path.join(__dirname, '..', 'db');
 
 export const config = {
   PORT: process.env.PORT,
@@ -12,7 +12,7 @@ export const config = {
 export const knexConfig = {
   client: 'sqlite3',
   connection: {
-    filename: './db/.sqlite',
+    filename: path.join(BASE_PATH, 'db.sqlite'),
   },
 
   // SQLite3 can't handle defaults
