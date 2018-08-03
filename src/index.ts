@@ -1,12 +1,21 @@
 import * as express from 'express';
-import config from './config';
+import { config, knexConfig } from './config';
+import * as knexInstance from 'knex';
+
+const knex = knexInstance(knexConfig);
 
 const app = express();
 
-app.get('/test', (req, res) => {
-  res.json({
-    message: 'Hello World',
-  });
+app.get('/users', async (req, res) => {
+  try {
+    const users = await knex('users');
+    res.json(users);
+  } catch {
+    res.status(500);
+    res.json({
+      message: 'Something went wrong',
+    });
+  }
 });
 
 app.listen(config.PORT, () => {
